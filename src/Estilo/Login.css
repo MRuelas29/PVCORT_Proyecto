@@ -1,0 +1,220 @@
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/imagen/ThePointRegister.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+} 
+
+/* TARJETA DE LOGIN: Estilo limpio y elevado */
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+/* ICONO Y TÍTULO */
+.login-avatar {
+  font-size: 60px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.login-title {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ESTILO DE LOS INPUTS */
+.login-card input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 2px solid #e1e1e1;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #2a5298;
+  box-shadow: 0 0 8px rgba(42, 82, 152, 0.2);
+}
+
+/* BOTÓN ENTRAR */
+.form-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: #2a5298;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-btn:hover:not(:disabled) {
+  background-color: #1e3c72;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Estado deshabilitado del botón */
+.form-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* MENSAJE DE ERROR: Estilo de alerta */
+.login-error {
+  background-color: #ffeef0;
+  color: #d63031;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #ffcad1;
+  font-weight: 500;
+}
+
+.pin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Contenedor principal del modal */
+.pin-modal {
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+  /* Animación de entrada para que se vea más profesional */
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Icono del candado */
+.pin-icon {
+  font-size: 55px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+/* Textos del modal */
+.pin-modal h3 {
+  color: #333;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.pin-modal p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* Input del PIN (con separación de letras para que se vea como código) */
+.pin-modal input {
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 12px;
+  padding: 15px;
+  font-weight: bold;
+  margin-bottom: 5px; /* Reducido para darle espacio al error si aparece */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilo específico para el texto de fondo (placeholder) para que quepa bien */
+.pin-modal input::placeholder {
+  font-size: 16px;
+  letter-spacing: normal;
+  font-weight: 500;
+  color: #999;
+}
+
+/* Contenedor de los botones */
+.pin-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Botón de Verificar heredará de .form-btn automáticamente, 
+   solo necesitamos asegurar que se flexione bien. */
+.pin-buttons .form-btn {
+  margin-top: 0;
+  flex: 1;
+  font-size: 16px;
+  padding: 14px;
+}
+
+/* Botón cancelar específico */
+.btn-cancelar {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f1f2f6;
+  color: #576574;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+  background-color: #e4e6eb;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-cancelar:active {
+  transform: translateY(0);
+}
